@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+
+{% macro link_to(endpoint, text) -%}
+<a href="{{ url_for(endpoint, **kwargs) }}">{{ text|safe }}</a>
+{%- endmacro %}
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#999; margin-left: auto;margin-right: auto;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:4px 16px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#444;background-color:#F7FDFA;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:4px 16px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#999;color:#fff;background-color:#26ADE4;}
+.tg .tg-9uug{background-color:#009900;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-9uug">Episode</th>
+    <th class="tg-9uug">Watch</th>
+  </tr>
+    {% for n in dict %}
+  <tr>
+    <td class="tg-yw4l">{{ n.title }}</td>
+    <td class="tg-yw4l"><a href="/playback?url={{ n.url }}">watch</a>
+  </tr>
+    {% endfor %}
+</table>
+{% endblock %}

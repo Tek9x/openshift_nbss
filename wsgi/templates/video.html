@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+{% if url %}
+<br>
+<div align="center"><iframe src="{{ url }}"
+ allowfullscreen="" frameborder="0" height="369"
+ scrolling="no" width="624"></iframe>
+</div>
+{% else %}
+<br>
+<br>
+<br>
+<br>
+<div align="center"><img src="static/images/pigshit.png" >
+</div>
+{% endif %}
+<div style="text-align: center;"><span
+ style="font-family: SimHei;">Like the website? consider supporting us by <a href='http://adf.ly/12043023/thanks-for-supporting-us'>clicking here</a></span>
+<br>
+    {% endblock %}
